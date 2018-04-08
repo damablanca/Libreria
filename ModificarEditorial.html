@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Modificar Editoriales</title>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+<div id="header"></div>
+	<div class="col-md-10 col-md-offset-1">
+		<div class="row text-center title-border title">
+			<FONT FACE="small fonts" COLOR="red"><h1>Editorial</h1></FONT>
+		</div>
+	</div>
+  <div class="col-md-10 col-md-offset-1 letra2">
+  
+	    <h2><u>Modificar Editorial</u></h2>
+	    <div class="row text-center header-space letra2">
+	    <table border="0" class="main-table back2" align="center">
+			<form action="/modificar/editorial" method="post" enctype="multipart/form-data">
+			<tr>
+            <th><label for="nombre">Nombre: </label></th>
+            <td height="40"><input class="title" name="nombre" th:value="${editorial.nombre}" type="text"/></td>
+          </tr>
+          
+          <tr>
+	            <th><label for="telefono">Telefono: </label></th>
+	            <td height="40"><input class="title" name="telefono" th:value="${editorial.telefono}" type="text" minlength="9" maxlength="10" required="true"/></td>
+         	 </tr>
+         	 
+			<tr>
+                <th><label for="Correo">Correo: </label></th>
+                <td height="40"><input class="title" name="Correo" th:value="${editorial.correo}" type="text"/></td>
+             </tr>
+             
+             <tr>
+                <th><label for="DireccionPostal">Direccion postal: </label></th>
+                <td height="40"><input class="title" name="DireccionPostal" th:value="${editorial.direccionPostal}" type="text"/></td>
+              </tr> 
+              
+              <tr>
+                <th><label for="identificacion">Identificacion: </label></th>
+                <td height="40"><input class="title" name="identificacion" th:value="${editorial.identificacion}" type="text"/></td>
+              </tr>
+              
+    <td></td><td height="40"><input name="id" type="hidden" th:value="${editorial.IDEditorial}"/><input class="btn btn-default" type="submit" value="Modificar Editorial" name = 'Modificar Editorial'/></td>
+        
+			</form>
+			</table>
+	</div>	
+		</div>			
+
+</body>
+</html>
