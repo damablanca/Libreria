@@ -1,6 +1,8 @@
 package es.urjc.libreria.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -9,7 +11,8 @@ import javax.persistence.ManyToOne;
 public class Libro {
 	
 	@Id
-	private Long IdLibro;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long idLibro;
 
 	private String autor;
 	private String titulo;
@@ -23,7 +26,7 @@ public class Libro {
 	private Editorial editorial;
 	
 	@ManyToOne
-	@JoinColumn(name="IdCategoria")
+	@JoinColumn(name="tipo")
 	private Categoria categoria;
 	
 	public Libro() {
@@ -43,12 +46,12 @@ public class Libro {
 	}
 	
 	
-	public Long getIdLibro() {
-		return IdLibro;
+	public long getIdLibro() {
+		return idLibro;
 	}
 
-	public void setIdLibro(Long idLibro) {
-		IdLibro = idLibro;
+	public void setIdLibro(long idLibro) {
+		this.idLibro = idLibro;
 	}
 	
 	public String getAutor() {

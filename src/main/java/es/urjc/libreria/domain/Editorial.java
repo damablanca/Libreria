@@ -4,14 +4,16 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Editorial {
 	@Id
-	
-	private Long IdEditorial;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long idEditorial;
 	
 	private String nombre;
 	private String telefono;
@@ -42,12 +44,12 @@ public class Editorial {
 		this.libro = libro;
 	}
 
-	public Long getIdEditorial() {
-		return IdEditorial;
+	public long getIdEditorial() {
+		return idEditorial;
 	}
 
-	public void setIdEditorial(Long idEditorial) {
-		IdEditorial = idEditorial;
+	public void setIdEditorial(long idEditorial) {
+		this.idEditorial = idEditorial;
 	}
 
 	public String getNombre() {

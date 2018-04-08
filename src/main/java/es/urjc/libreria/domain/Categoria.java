@@ -4,14 +4,17 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Categoria {
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long idCategoria;
 	
-	private Long IdCategoria;
 	private String tipo;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="categoria")
@@ -34,12 +37,12 @@ public class Categoria {
 		this.libro = libro;
 	}
 
-	public Long getIdCategoria() {
-		return IdCategoria;
+	public long getIdCategoria() {
+		return idCategoria;
 	}
 
-	public void setIdCategoria(Long idCategoria) {
-		IdCategoria = idCategoria;
+	public void setIdCategoria(long idCategoria) {
+		this.idCategoria = idCategoria;
 	}
 
 	public String getTipo() {
