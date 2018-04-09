@@ -18,7 +18,8 @@
 			<th>Editorial</th>
 			<th>Categoría</th>
 		</tr>
-		<tr th:each="libro: ${libro}">
+		<tr th:href="@{/modificarLibro/{id}(id=${libros.idLibros})}">
+      Inside <a> tag
 			<td th:text="${libro.autor}"></td>
 			<td th:text="${libro.titulo}"></td>
 			<td th:text="${libro.anno}"></td>
@@ -33,9 +34,5 @@
 	<div>
 	<a href="/modificarLibro" class="btn btn-success">Modificar</a>	
 	</div>
-	
-	
 </body>
 </html>
-
-
