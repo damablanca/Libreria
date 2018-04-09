@@ -18,8 +18,7 @@
 			<th>Editorial</th>
 			<th>Categoría</th>
 		</tr>
-		<tr th:href="@{/modificarLibro/{id}(id=${libros.idLibros})}">
-      Inside <a> tag
+		<tr th:href="@{/mostrarLibro/{id}(id=${libros.idLibros})}">
 			<td th:text="${libro.autor}"></td>
 			<td th:text="${libro.titulo}"></td>
 			<td th:text="${libro.anno}"></td>
