@@ -7,17 +7,8 @@
 </head>
 <body>
 
-  <div id="header"></div>
-	<div class="col-md-10 col-md-offset-1">
-		<div class="row text-center title-border title">
-			<FONT FACE="small fonts" COLOR="red"><h1>Editorial</h1></FONT>
-		</div>
-	</div>
-  <div class="col-md-10 col-md-offset-1 letra2">
-  
 	    <h2><u>Modificar Libro</u></h2>
 	    <div class="row text-center header-space letra2">
-	    <table border="0" class="main-table back2" align="center">
 			<form class="libro" th:object="$(libro)" th:action ="@modificar">
 			<tr>
             <th><label for="autor">Autor: </label></th>
@@ -52,9 +43,7 @@
     <td></td><td height="40"><input name="id" type="hidden" th:value="${libro.idLibro}"/><input class="btn btn-default" type="submit" value="Modificar" name = 'Modificar Libro'/></td>
         
 			</form>
-			</table>
 	</div>	
-		</div>
   
 </body>
 </html>
