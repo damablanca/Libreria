@@ -5,7 +5,26 @@
 <title>Consultar Editorial</title>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
 </head>
-<body>
-
+<body style="padding:40px">
+	<h1>Editorial Consultada</h1>
+	<table class="table .table-bordered">
+		<tr>
+			<th>Nombre</th>
+			<th>Telefono</th>
+			<th>Correo</th>
+			<th>Dirección Postal</th>
+			<th>Identificación</th>
+		</tr>
+		<tr th:href="@{/mostrarEditorial/{id}(id=${editorial.idEditorial})}">
+			<td th:text="${editorial.nombre}"></td>
+			<td th:text="${editorial.telefono}"></td>
+			<td th:text="${editorial.correo>
+			<td th:text="${editorial.direcccionPostal"></td>
+			<td th:text="${editorial.identificacion}"></td>
+		</tr>
+	</table>
+	<div>
+	<a href="/modificarEditorial" class="btn btn-success">Modificar</a>	
+	</div>
 </body>
 </html>
