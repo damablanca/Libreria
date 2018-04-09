@@ -8,7 +8,7 @@
 <body>
 <h2>Añadir Libro</h2>
 	<div class="col-md-2" style="padding:30px">
-	<form th:object="${libro}" th:action="@{save}" action="#" method="post">
+	<form th:object="${libro}" th:action="@{guardarLibros}" action="#" method="post">
 		<label for="titulo">Título:</label>
     	<input type="text" id="titulo" th:field="*{titulo}" /><br/>
     	<label for="autor">Autor:</label>
@@ -23,7 +23,7 @@
     	<input type="text" id="precio" th:field="*{precio}" /><br/>
     	<label for="categoria">Categoría:</label>
 			<select id="categoria" th:field="*{categoria}" class="form-control">
-       			<option th:each="categoria: ${categorias}" th:value="${categoria.categoriaid}" th:text="${categoria.name}"></option>
+       			<option th:each="categoria: ${categorias}" th:value="${categoria.idCategoria}" th:text="${categoria.tipo}"></option>
     		</select>	
     	
     	<div style="padding:30px 0px">
