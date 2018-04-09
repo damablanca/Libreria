@@ -18,7 +18,7 @@
 	    <h2><u>Modificar Editorial</u></h2>
 	    <div class="row text-center header-space letra2">
 	    <table border="0" class="main-table back2" align="center">
-			<form action="/modificar/editorial" method="post" enctype="multipart/form-data">
+			<form class="editorial" th:object="$(editorial)" th:action ="@modificar">
 			<tr>
             <th><label for="nombre">Nombre: </label></th>
             <td height="40"><input class="title" name="nombre" th:value="${editorial.nombre}" type="text"/></td>
@@ -44,7 +44,7 @@
                 <td height="40"><input class="title" name="identificacion" th:value="${editorial.identificacion}" type="text"/></td>
               </tr>
               
-    <td></td><td height="40"><input name="id" type="hidden" th:value="${editorial.IDEditorial}"/><input class="btn btn-default" type="submit" value="Modificar Editorial" name = 'Modificar Editorial'/></td>
+    <td></td><td height="40"><input name="id" type="hidden" th:value="${editorial.IDEditorial}"/><input class="btn btn-default" type="submit" value="Modificar" name = 'Modificar Editorial'/></td>
         
 			</form>
 			</table>
