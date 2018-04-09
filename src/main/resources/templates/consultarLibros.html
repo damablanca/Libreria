@@ -5,10 +5,37 @@
 <title>Consultar Libros</title>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
 </head>
-<body>
+<body style="padding:40px">
+	<h1>Libros Consultados</h1>
+	<table class="table .table-bordered">
+		<tr>
+			<th>Autor</th>
+			<th>Titulo</th>
+			<th>Año</th>
+			<th>Número de Páginas</th>
+			<th>ISBN</th>
+			<th>Precio</th>
+			<th>Editorial</th>
+			<th>Categoría</th>
+		</tr>
+		<tr th:each="libro: ${libro}">
+			<td th:text="${libro.autor}"></td>
+			<td th:text="${libro.titulo}"></td>
+			<td th:text="${libro.anno}"></td>
+			<td th:text="${libro.numeroDePaginas}"></td>
+			<td th:text="${libro.ISBN}"></td>
+			<td th:text="${libro.precio}"></td>
+			<td th:text="${libro.editorial.nombre}"></td>
+			<td th:text="${libro.categoria.tipo}"></td>
+		</tr>
+	</table>
+
+	<div>
+	<a href="/add" class="btn btn-success">Modificar</a>	
+	</div>
+	
 	
 </body>
 </html>
-
 
 
