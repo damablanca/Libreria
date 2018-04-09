@@ -8,8 +8,8 @@
 <body>
 <h2>Añadir Editorial</h2>
 	<div class="col-md-2" style="padding:30px">
-	<form th:object="${editorial}" th:action="@{guardarEditoriales}" action="#" method="post">
-		<label for="nombre">Nombre:</label>
+	<form th:object="${editoriales}" th:action="@{guardarEditoriales}" action="#" method="post">
+	<label for="nombre">Nombre:</label>
     	<input type="text" id="nombre" th:field="*{nombre}" /><br/>
     	<label for="telefono">Teléfono:</label>
     	<input type="text" id="telefono" th:field="*{telefono}" /><br/>
