@@ -8,10 +8,7 @@
 <body> 
 	
 	 <h1>Modificar Editorial</h1>
-          <form class="editorial" th:object="$(editorial)" th:action ="@modificar">
-		  
-	      <label for="idEditorial">Id Editorial</label>
-		    <input type="number" class="form-control" id="idEditorial" th:field="*{editorial.idEditorial}" required="true"/>	
+          <form class="editorial" th:object="$(editorial)" th:action ="@modificar">	
 		  
 	      <label for="nombre">Nombre</label>
 		    <input type="text" class="form-control" id="nombre" th:field="*{editorial.nombre}"/>
