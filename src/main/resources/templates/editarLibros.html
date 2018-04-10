@@ -15,7 +15,12 @@
             <input type="text" class="form-control" id="autor" th:field="*{libro.autor}" required="true"/>
 		
 	 <label for="titulo">Titulo</label>
-	    <input type="text" class="form-control" id="titulo="*{libro.titulo}" required="true"/>
+	    <input type="text" class="form-control" id="titulo" th:field="*{libro.titulo}" required="true"/>
+	   
+	<label for="editorial">Editorial</label>
+	       <select id="idEditorial" th:field="*{editorial}" class="form-control">
+		 <option th:each="editorial: ${editorial}" th:value="${editorial.nombre}" th:text="${editorial.nombre}"></option>
+    	       </select>
          	 
 	 <label for="anno">Anno</label>
 	    <input type="number" class="form-control" id="anno" th:field="*{libro.anno}" maxlength="4" required="true"/>
