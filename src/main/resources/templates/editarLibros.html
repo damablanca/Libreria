@@ -7,43 +7,38 @@
 </head>
 <body>
 
-	    <h2><u>Modificar Libro</u></h2>
-	    <div class="row text-center header-space letra2">
-			<form class="libro" th:object="$(libro)" th:action ="@modificar">
-			<tr>
-            <th><label for="autor">Autor: </label></th>
-            <td height="40"><input class="title" name="autor" th:value="${libro.autor}" type="text"/></td>
-          </tr>
-          
-          <tr>
-	            <th><label for="titulo">Titulo: </label></th>
-	            <td height="40"><input class="title" name="titulo" th:value="${libro.titulo}" type="text"/></td>
-         	 </tr>
+	   <h1>Modificar Libro</h1>
+		
+      <form class="libro" th:object="$(libro)" th:action ="@modificar">
+		  
+         <label for="autor">Autor</label>
+            <input type="text" class="form-control" id="autor" th:field="*{libro.autor}" required="true"/>
+		
+	 <label for="titulo">Titulo</label>
+	    <input type="text" class="form-control" id="titulo="*{libro.titulo}" required="true"/>
          	 
-			<tr>
-                <th><label for="anno">Anno: </label></th>
-                <td height="40"><input class="title" name="Anno" th:value="${libro.anno}" type="number" minlength='2' maxlength ='4'/></td>
-             </tr>
-             
-             <tr>
-                <th><label for="numeroDePaginas">Numero de paginas: </label></th>
-                <td height="40"><input class="title" name="NumeroDePaginas" th:value="${libro.numeroDePaginas}" type="number"/></td>
-              </tr> 
+	 <label for="anno">Anno</label>
+	    <input type="number" class="form-control" id="anno" th:field="*{libro.anno}" maxlength="4" required="true"/>
+         
+         <label for="numeroDePaginas">Numero de paginas</label>
+	    <input type="number" class="form-control" id="numeroDePaginas" th:field="*{libro.numeroDePaginas}" required="true"/>
               
-              <tr>
-                <th><label for="isbn">ISBN: </label></th>
-                <td height="40"><input class="title" name="isbn" th:value="${libro.ISBN}" type="text"/></td>
-              </tr>
-
-              <tr>
-                <th><label for="precio">Precio: </label></th>
-                <td height="40"><input class="title" name="precio" th:value="${libro.precio}" type="number"/></td>
-              </tr>
+	 <label for="ISBN">ISBN</label>
+	    <input type="text" class="form-control" id="ISBN" th:field="*{libro.ISBN}" required="true"/>
+		
+	  <label for="precio">Precio</label>
+	    <input type="number" class="form-control" id="Precio" th:field="*{libro.precio}" required="true"/>
               
-    <td></td><td height="40"><input name="id" type="hidden" th:value="${libro.idLibro}"/><input class="btn btn-default" type="submit" value="Modificar" name = 'Modificar Libro'/></td>
-        
-			</form>
-	</div>	
+          <label for="categoria">Categoria</label>
+	     <select id="categoria" th:field="*{categoria}" class="form-control">
+		<option th:each="categoria: ${categoria}" th:value="${categoria.idCategoria}" th:text="${categoria.tipo}"></option>
+    	      </select>
+															 
+	<div style="padding-top:20px">
+	     <input type="submit" value="modificarLibro" class="btn btn-success"></input>
+        </div>
+        														 
+      </form>	
   
 </body>
 </html>
